@@ -1,43 +1,61 @@
-package calculadora;
+package logica;
+
 import java.util.Scanner;
-import logica.Logica;
-public class Calculadora {
-    public static void main(String[] args) {
-        Logica metodo = new Logica();
-        Scanner V = new Scanner(System.in);
-        int opc;
 
-        do {
-            System.out.println("Bienvenido Usuario user123"
-                    + "\nQue desea hacer?"
-                    + "\n[1]Sumar"
-                    + "\n[2]Restar"
-                    + "\n[3]Multiplicar"
-                    + "\n[4]Dividir"
-                    + "\n[5]Salir");
-            opc = V.nextInt();
-            switch (opc) {
-                case 1:
-                    System.out.println("Resultado= " + metodo.Suma());
-                    break;
-                case 2:
-                    System.out.println("Resultado= " + metodo.Resta());
-                    break;
-                case 3:
-                    System.out.println("Resultado= " + metodo.Multiplicacion());
-                    break;
-                case 4:
-                    System.out.println("Resultado= " + metodo.Divicion());
-                    break;
-                case 5:
-                    System.out.println("Saliendo...");
-                    break;
-                default:
-                    System.out.println("Opcion erronea");
-            }
-            System.out.println("");
-        } while (opc != 5);
+public class Logica {
 
+    Scanner V = new Scanner(System.in);
+    private double A, B;
+
+    public double Suma() {
+        System.out.println("");
+        double C = 0;
+        System.out.println("Metodo Sumar"
+                + "\nIntroduce El numero 1: ");
+        A = V.nextInt();
+        System.out.println("Introduce el numero 2: ");
+        B = V.nextInt();
+        C = A + B;
+        return C;
     }
 
+    public double Resta() {
+        System.out.println("");
+        double C = 0;
+        System.out.println("Metodo Restar"
+                + "\nIntroduce El numero 1: ");
+        A = V.nextInt();
+        System.out.println("Introduce el numero 2: ");
+        B = V.nextInt();
+        C = A - B;
+        return C;
+    }
+
+    public double Multiplicacion() {
+        System.out.println("");
+        double C = 0;
+        System.out.println("Metodo Sumar"
+                + "\nIntroduce El numero 1: ");
+        A = V.nextInt();
+        System.out.println("Introduce el numero 2: ");
+        B = V.nextInt();
+        C = A * B;
+        return C;
+    }
+
+    public double Divicion() {
+        System.out.println("");
+        double C = 0;
+        try {
+            System.out.println("Metodo Sumar"
+                    + "\nIntroduce El Dividendo: ");
+            A = V.nextInt();
+            System.out.println("Introduce el Divisor: ");
+            B = V.nextInt();
+            C = A / B;
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
+        return C;
+    }
 }
